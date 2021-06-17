@@ -1,2 +1,3 @@
-# user-avatar
-Local user avatars for ClassicPress &amp; WordPress.
+# User Avatars
+
+Local user avatars for ClassicPress & WordPress.
