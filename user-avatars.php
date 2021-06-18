@@ -111,7 +111,14 @@ function activate_plugin() {
  * @access public
  * @return void
  */
-function deactivate_plugin() {}
+function deactivate_plugin() {
+
+	// Instantiate the Deactivate class.
+	$deactivate = new Activate\Deactivate;
+
+	// Update options.
+	$deactivate->options();
+}
 
 /**
  * Disable plugin for PHP version
