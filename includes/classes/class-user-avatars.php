@@ -120,18 +120,19 @@ class User_Avatars {
 			display: inline-block;
 			border: 1px solid #ccc;
 			border-radius: 50%;
-			background: url( <?php echo UAP_URL . 'assets/images/checker-bg.png' ?> );
+			/* The background image is for the blank avatar to display something. */
+			background-image: url( <?php echo UAP_URL . 'assets/images/checker-bg.png' ?> );
 			background-size: contain;
 		}
 
-		@media screen and ( max-width: 800px ) {
+		@media screen and ( max-width: 1082px ) {
 			.defaultavatarpicker label {
 				width: 33.33325%;
 				width: calc( 100% / 3 );
 			}
 		}
 
-		@media screen and ( max-width: 480px ) {
+		@media screen and ( max-width: 570px ) {
 			.defaultavatarpicker label {
 				width: 50%;
 			}
@@ -147,6 +148,12 @@ class User_Avatars {
 		<style>
 		.user-profile-picture {
 			display: none;
+		}
+
+		.avatar-upload-button input {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
 		}
 		</style>
 		<?php
@@ -332,31 +339,54 @@ class User_Avatars {
 					<?php
 					$options = get_option( 'uap_user_avatars_caps' );
 
-					if ( empty( $options ) || current_user_can( 'upload_files' ) ) {
+					if ( empty( $options ) || current_user_can( 'upload_files' ) ) :
 
 						// Nonce security.
 						wp_nonce_field( 'uap_user_avatar_nonce', '_uap_user_avatar_nonce', false );
 
 						// File upload input.
-						echo '<p><label class="button avatar-upload-button" for="basic-user-avatar"><input class="screen-reader-text" type="file" name="basic-user-avatar" id="basic-user-avatar" aria-label="' . __( 'Upload Avatar', 'user-avatars' ) . '" />' . __( 'Upload Avatar', 'user-avatars' ) . '</label></p>';
+						$upload = sprintf(
+							'<label class="not-button avatar-upload-button" for="basic-user-avatar"><input class="not-screen-reader-text" type="file" name="basic-user-avatar" id="basic-user-avatar" aria-label="%s" /><span class="screen-reader-text">%s</span></label>',
+							__( 'Upload Avatar', 'user-avatars' ),
+							__( 'Upload Avatar', 'user-avatars' )
+						);
+						echo "<p>{$upload}</p>";
 
 						if ( empty( $profileuser->uap_user_avatar ) ) {
-							echo '<p class="description">' . __( 'No user avatar is set. Use the upload button to add an avatar.', 'user-avatars' ) . '</p>';
+
+							printf(
+								'<p class="description">%s</p>',
+								__( 'No user avatar is set. Use the upload button to add an avatar.', 'user-avatars' )
+							);
 
 						} else {
-							echo '<p><label for="basic-user-avatar-erase"><input type="checkbox" name="basic-user-avatar-erase" value="1" /> ' . __( 'Delete local avatar', 'user-avatars' ) . '</label></p>';
-							echo '<p class="description">' . __( 'Replace the local avatar by uploading a new avatar or erase the current avatar by checking the delete option.', 'user-avatars' ) . '</p>';
+
+							$delete = sprintf(
+								'<label for="basic-user-avatar-erase"><input type="checkbox" name="basic-user-avatar-erase" value="1" /> %s</label>',
+								__( 'Delete local avatar', 'user-avatars' )
+							);
+							echo "<p>{$delete}</p>";
+
+							printf(
+								'<p class="description">%s</p>',
+								__( 'Replace the avatar by uploading a new avatar or erase the current avatar by checking the delete option.', 'user-avatars' )
+							);
 						}
 
-					} else {
-
+					else :
 						if ( empty( $profileuser->uap_user_avatar ) ) {
-							echo '<p class="description">' . __( 'You do not have permission to upload an avatar.', 'user-avatars' ) . '</p>';
+							printf(
+								'<p class="description">%s</p>',
+								__( 'You do not have permission to upload an avatar.', 'user-avatars' )
+							);
 
 						} else {
-							echo '<p class="description">' . __( 'You do not have media management permissions. To change your local avatar, contact the site administrator.', 'user-avatars' ) . '</p>';
+							printf(
+								'<p class="description">%s</p>',
+								__( 'You do not have media management permissions. To change your local avatar, contact the site administrator.', 'user-avatars' )
+							);
 						}
-					}
+					endif;
 					?>
 					</td>
 				</tr>
@@ -461,31 +491,55 @@ class User_Avatars {
 	 			echo get_avatar( $profileuser->ID );
 				$options = get_option( 'uap_user_avatars_caps' );
 
-				if ( empty( $options ) || current_user_can( 'upload_files' ) ) {
+				if ( empty( $options ) || current_user_can( 'upload_files' ) ) :
 
 					// Nonce security.
 					wp_nonce_field( 'uap_user_avatar_nonce', '_uap_user_avatar_nonce', false );
 
 					// File upload input.
-					echo '<br /><input type="file" name="basic-user-avatar" id="basic-local-avatar" /><br />';
+					$upload = sprintf(
+						'<label class="not-button avatar-upload-button" for="basic-user-avatar"><input class="not-screen-reader-text" type="file" name="basic-user-avatar" id="basic-user-avatar" aria-label="%s" /><span class="screen-reader-text">%s</span></label>',
+						__( 'Upload Avatar', 'user-avatars' ),
+						__( 'Upload Avatar', 'user-avatars' )
+					);
+					echo "<p>{$upload}</p>";
 
 					if ( empty( $profileuser->uap_user_avatar ) ) {
-						echo '<span class="description" style="margin-left:0;">' . __( 'No local avatar is set. Use the upload field to add a local avatar.', 'user-avatars' ) . '</span>';
+
+						printf(
+							'<p class="description">%s</p>',
+							__( 'No user avatar is set. Use the upload button to add an avatar.', 'user-avatars' )
+						);
 
 					} else {
-						echo '<input type="checkbox" name="basic-user-avatar-erase" value="1" style="width:auto" /> ' . __( 'Delete local avatar', 'user-avatars' ) . '<br />';
-						echo '<span class="description" style="margin-left:0;">' . __( 'Replace the local avatar by uploading a new avatar, or erase the local avatar (falling back to a gravatar) by checking the delete option.', 'user-avatars' ) . '</span>';
+
+						$delete = sprintf(
+							'<label for="basic-user-avatar-erase"><input type="checkbox" name="basic-user-avatar-erase" value="1" /> %s</label>',
+							__( 'Delete local avatar', 'user-avatars' )
+						);
+						echo "<p>{$delete}</p>";
+
+						printf(
+							'<p class="description">%s</p>',
+							__( 'Replace the avatar by uploading a new avatar or erase the current avatar by checking the delete option.', 'user-avatars' )
+						);
 					}
 
-				} else {
+				else :
 
 					if ( empty( $profileuser->uap_user_avatar ) ) {
-						echo '<span class="description" style="margin-left:0;">' . __( 'You do not have permission to upload an avatar.', 'user-avatars' ) . '</span>';
+						printf(
+							'<p class="description">%s</p>',
+							__( 'You do not have permission to upload an avatar.', 'user-avatars' )
+						);
 
 					} else {
-						echo '<span class="description" style="margin-left:0;">' . __( 'You do not have media management permissions. To change your local avatar, contact the site administrator.', 'user-avatars' ) . '</span>';
+						printf(
+							'<p class="description">%s</p>',
+							__( 'You do not have media management permissions. To change your local avatar, contact the site administrator.', 'user-avatars' )
+						);
 					}
-				}
+				endif;
 
 		echo '</fieldset>';
 		echo '</div>';
