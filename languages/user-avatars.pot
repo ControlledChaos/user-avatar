@@ -1,0 +1,174 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: User Avatars\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-18 06:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.7.2\n"
+"X-Domain: user-avatars"
+
+#: includes/classes/class-user-avatars.php:458
+msgid "Avatar"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:196
+msgid "Avatar Upload Permission"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:663
+msgid "Black"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:666
+msgid "Blank"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:656
+msgid "Blue"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:661
+msgid "Brown"
+msgstr ""
+
+#. Author of the plugin
+msgid "Controlled Chaos Design"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:347
+#: includes/classes/class-user-avatars.php:476
+msgid "Delete local avatar"
+msgstr ""
+
+#: activate/classes/class-activate.php:138
+msgid ""
+"Functionality of this plugin has been disabled because it requires PHP "
+"version"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:665
+msgid "Gray"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:659
+msgid "Green"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://ccdzine.com/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/ControlledChaos/user-avatars"
+msgstr ""
+
+#. Description of the plugin
+msgid "Local user avatars for ClassicPress & WordPress."
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:651
+msgid "Mystery"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:653
+msgid "Mystery Dark"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:652
+msgid "Mystery Light"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:473
+msgid "No local avatar is set. Use the upload field to add a local avatar."
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:344
+msgid "No user avatar is set. Use the upload button to add an avatar."
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:200
+msgid ""
+"Only allow users with file upload capabilities to upload local avatars "
+"(Authors and above)."
+msgstr ""
+
+#: activate/classes/class-activate.php:140
+msgid "or greater. Your system is running PHP version"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:660
+msgid "Orange"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:655
+msgid "Pink"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:658
+msgid "Red"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:348
+msgid ""
+"Replace the local avatar by uploading a new avatar or erase the current "
+"avatar by checking the delete option."
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:477
+msgid ""
+"Replace the local avatar by uploading a new avatar, or erase the local "
+"avatar (falling back to a gravatar) by checking the delete option."
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:662
+msgid "Tan"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:341
+msgid "Upload Avatar"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:327
+msgid "Upload or Delete"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:322
+msgid "User Avatar"
+msgstr ""
+
+#. Name of the plugin
+msgid "User Avatars"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:657
+msgid "Violet"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:664
+msgid "White"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:654
+msgid "Yellow"
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:357
+#: includes/classes/class-user-avatars.php:486
+msgid ""
+"You do not have media management permissions. To change your local avatar, "
+"contact the site administrator."
+msgstr ""
+
+#: includes/classes/class-user-avatars.php:354
+#: includes/classes/class-user-avatars.php:483
+msgid "You do not have permission to upload an avatar."
+msgstr ""
