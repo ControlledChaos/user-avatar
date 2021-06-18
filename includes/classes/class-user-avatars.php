@@ -120,6 +120,8 @@ class User_Avatars {
 			display: inline-block;
 			border: 1px solid #ccc;
 			border-radius: 50%;
+			background: url( <?php echo UAP_URL . 'assets/images/checker-bg.png' ?> );
+			background-size: contain;
 		}
 
 		@media screen and ( max-width: 800px ) {
@@ -602,17 +604,21 @@ class User_Avatars {
 		// Local avatar options.
 		$defaults = [
 			'mystery' => esc_url( UAP_URL . 'assets/images/mystery.png' ),
+			'light'   => esc_url( UAP_URL . 'assets/images/mystery-light.png' ),
+			'dark'    => esc_url( UAP_URL . 'assets/images/mystery-dark.png' ),
 			'generic' => esc_url( UAP_URL . 'assets/images/generic.png' ),
 			'yellow'  => esc_url( UAP_URL . 'assets/images/yellow.png' ),
 			'pink'    => esc_url( UAP_URL . 'assets/images/pink.png' ),
 			'blue'    => esc_url( UAP_URL . 'assets/images/blue.png' ),
 			'violet'  => esc_url( UAP_URL . 'assets/images/violet.png' ),
+			'red'     => esc_url( UAP_URL . 'assets/images/red.png' ),
 			'green'   => esc_url( UAP_URL . 'assets/images/green.png' ),
 			'orange'  => esc_url( UAP_URL . 'assets/images/orange.png' ),
 			'black'   => esc_url( UAP_URL . 'assets/images/black.png' ),
 			'white'   => esc_url( UAP_URL . 'assets/images/white.png' ),
 			'gray'    => esc_url( UAP_URL . 'assets/images/gray.png' ),
 			'brown'   => esc_url( UAP_URL . 'assets/images/brown.png' ),
+			'tan'     => esc_url( UAP_URL . 'assets/images/tan.png' ),
 			'blank'   => esc_url( UAP_URL . 'assets/images/blank.png' )
 		];
 
@@ -643,13 +649,17 @@ class User_Avatars {
 		// Array of new avatar options.
 		$options = [
 			$defaults['mystery'] => __( 'Mystery', 'user-avatars' ),
+			$defaults['light']   => __( 'Mystery Light', 'user-avatars' ),
+			$defaults['dark']    => __( 'Mystery Dark', 'user-avatars' ),
 			$defaults['yellow']  => __( 'Yellow', 'user-avatars' ),
 			$defaults['pink']    => __( 'Pink', 'user-avatars' ),
 			$defaults['blue']    => __( 'Blue', 'user-avatars' ),
 			$defaults['violet']  => __( 'Violet', 'user-avatars' ),
+			$defaults['red']     => __( 'Red', 'user-avatars' ),
 			$defaults['green']   => __( 'Green', 'user-avatars' ),
 			$defaults['orange']  => __( 'Orange', 'user-avatars' ),
 			$defaults['brown']   => __( 'Brown', 'user-avatars' ),
+			$defaults['tan']     => __( 'Tan', 'user-avatars' ),
 			$defaults['black']   => __( 'Black', 'user-avatars' ),
 			$defaults['white']   => __( 'White', 'user-avatars' ),
 			$defaults['gray']    => __( 'Gray', 'user-avatars' ),
